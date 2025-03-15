@@ -89,6 +89,17 @@
               <p id="cpu-utilization" class="metric-value">0.00%</p>
             </div>
           </div>
+
+          <div class="explanation-card">
+            <h3>Calculation Explanation</h3>
+            <div class="explanation-content">
+              <p><strong>Waiting Time (WT)</strong> = Turnaround Time - Burst Time</p>
+              <p><strong>Turnaround Time (TAT)</strong> = Completion Time - Arrival Time</p>
+              <p><strong>CPU Utilization</strong> = (Total Burst Time / Completion Time of Last Process) × 100%</p>
+              <p><strong>Average Waiting Time</strong> = Sum of all Waiting Times / Number of Processes</p>
+              <p><strong>Average Turnaround Time</strong> = Sum of all Turnaround Times / Number of Processes</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
