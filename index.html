@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CPU Scheduling Simulator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div></div>
+<body class="dark">
+  <div class="container">
     <header>
       <h1>CPU Scheduling Simulator</h1>
-      <button">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
         <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -25,37 +28,37 @@
       </button>
     </header>
 
-    <div>
-      <button>First Come First Serve</button>
-      <button>Shortest Job First</button>
-      <button>Priority</button>
-      <button>Round Robin</button>
+    <div class="tabs">
+      <button class="tab-btn active" data-algorithm="fcfs">First Come First Serve</button>
+      <button class="tab-btn" data-algorithm="sjf">Shortest Job First</button>
+      <button class="tab-btn" data-algorithm="priority">Priority</button>
+      <button class="tab-btn" data-algorithm="rr">Round Robin</button>
     </div>
 
-    <div>
-      <div>
+    <div class="card">
+      <div class="card-header">
         <h2>Process Input</h2>
         <p>Enter the details for each process</p>
       </div>
-      <div>
-        <div>
-          <table>
+      <div class="card-content">
+        <div class="table-container">
+          <table id="process-table">
             <thead>
               <tr>
                 <th>Process</th>
                 <th>Arrival Time</th>
                 <th>Burst Time</th>
-                <th>Priority</th>
+                <th id="priority-header" class="hidden">Priority</th>
                 <th>Actions</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="process-tbody">
             </tbody>
           </table>
         </div>
 
-        <div>
-          <button>
+        <div class="controls">
+          <button id="add-process" class="btn btn-outline">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
               <line x1="12" y1="5" x2="12" y2="19"></line>
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -63,12 +66,12 @@
             Add Process
           </button>
 
-          <div>
+          <div id="time-quantum-container" class="time-quantum hidden">
             <label for="time-quantum">Time Quantum:</label>
             <input type="number" id="time-quantum" min="1" value="2" class="input-small">
           </div>
 
-          <button id="run-simulation">Run Simulation</button>
+          <button id="run-simulation" class="btn btn-primary">Run Simulation</button>
         </div>
       </div>
     </div>
