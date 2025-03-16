@@ -80,6 +80,33 @@
       <div class="card">
         <div class="card-header">
           <h2>Gantt Chart</h2>
+          <div class="visualization-controls">
+            <button id="reset-viz" class="btn btn-icon" title="Reset">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                <path d="M3 2v6h6"></path>
+                <path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path>
+              </svg>
+            </button>
+            <button id="step-viz" class="btn btn-icon" title="Step">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                <line x1="19" y1="5" x2="19" y2="19"></line>
+              </svg>
+            </button>
+            <button id="play-viz" class="btn btn-icon" title="Play/Pause">
+              <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon hidden">
+                <rect x="6" y="4" width="4" height="16"></rect>
+                <rect x="14" y="4" width="4" height="16"></rect>
+              </svg>
+            </button>
+            <div class="speed-control">
+              <label for="speed-slider">Speed:</label>
+              <input type="range" id="speed-slider" min="1" max="10" value="5" class="slider">
+            </div>
+          </div>
         </div>
         <div class="card-content">
           <div id="gantt-chart" class="gantt-chart">
