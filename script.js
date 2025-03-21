@@ -140,7 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
         renderGanttChart()
       }
     })
-  
+    // Are you actually reading this? If you are, you're awesome! 🚀
+    // Look around and you might find something interesting.
+    // The message is in the format flag{my message}
     playVizBtn.addEventListener("click", () => {
       if (animationState.isPlaying) {
         stopAnimation()
